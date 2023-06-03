@@ -1,3 +1,13 @@
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 # 时间复杂度
 我们先看一段C++代码：
 ```cpp
@@ -29,22 +39,14 @@ int main()
 
 式子会有点复杂，建议大家笔算一遍。
 $$
-O(\sum_{i=1}^n) \ \text{内层循环执行了 $i$ 次}
-$$
-$$
-=O(\frac{1}{2}n(n+1)) \ \text{等差数列公式}
-$$
-$$
-=O(\frac{1}{2}(n^2+n))
-$$
-$$
-=O(n(n+1))\  \text{舍弃系数}
-$$
-$$
-=O(n^2+n)
-$$
-$$
-=O(n^2) \text{保留指数最高项}
+\begin{align}
+&&O(\sum_{i=1}^n) \ \text{内层循环执行了 $i$ 次}\\
+&=&O(\frac{1}{2}n(n+1)) \ \text{等差数列公式}\\
+&=&O(\frac{1}{2}(n^2+n))\\
+&=&O(n(n+1))\  \text{舍弃系数}\\
+&=&O(n^2+n)\\
+&=&O(n^2) \text{保留指数最高项}
+\end{align}
 $$
 # 空间复杂度
 出题人一般不限制空间，注重限制时间，如果空间限制较大（如要求代码申请的空间不能超过4MB），那么就得考虑空间复杂度。当然，也有一些难题，又限制空间，又限制时间。
